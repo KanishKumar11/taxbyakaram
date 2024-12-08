@@ -42,20 +42,20 @@ export default function Hero() {
       </BoxReveal>
 
       <div className="flex flex-col md:flex-row gap-10 items-center justify-center">
-        <div className="space-y-4 order-2 md:order-1">
+        <div className="space-y-4 ">
           {data[0].map((item, idx) => (
             <Card {...item} key={idx} direction={"left"} delay={idx * 0.1} />
           ))}
         </div>
         <motion.div
-          className="relative h-72 w-[250px] order-1 md:order-2"
+          className="relative h-72 w-[250px] "
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <Image src="/1.svg" alt="Hero Image" fill />
         </motion.div>
-        <div className="space-y-4 order-3">
+        <div className="space-y-4 ">
           {data[1].map((item, idx) => (
             <Card
               {...item}
