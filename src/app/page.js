@@ -6,16 +6,38 @@ import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
 import { StickyScrollAnimation } from "@/components/StickyScrollAnimation";
 import Testimonials from "@/components/Testimonials";
+import { motion } from "framer-motion";
 import React from "react";
 
 export default function Home() {
   return (
-    <div className="bg-neutral-950 py-5 overflow-hidden">
-      <Navbar />
-      <Hero />
-      <StickyScrollAnimation />
+    <div className="bg-white py-5 relative">
+      <div className=" bg-gradient-to-b from-[#00ADEE] to-[#006388] mx-10 rounded-3xl pt-5 mb-[500px] px-4">
+        <Navbar />
+        <Hero />
+      </div>
       <Services />
-      <Learn />
+      <div className=" bg-gradient-to-b from-[#00ADEE]  to-[#006388] mx-10 rounded-3xl   px-4 py-20">
+        <motion.h2
+          className="text-4xl md:text-5xl lg:text-6xl font-extralight text-center mb-8 mx-auto text-white max-w-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Not Sure Which ITR to Choose?
+        </motion.h2>
+        <motion.p
+          className="text-base md:text-lg text-slate-50 mx-auto text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Confused about the right ITR for you? Here&#39;s a quick guide
+        </motion.p>
+        <Learn />
+      </div>
+      {/* <StickyScrollAnimation />
+       */}
       <Testimonials />
       <Footer />
     </div>

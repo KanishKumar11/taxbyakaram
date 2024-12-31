@@ -6,17 +6,9 @@ export default function Learn() {
   const [activeTab, setActiveTab] = useState(learnTabs[0]);
 
   return (
-    <div className="bg-gray-50 text-center py-20 px-4 my-20 flex flex-col items-center justify-center gap-10">
-      <motion.h2
-        className="text-4xl md:text-6xl lg:text-8xl font-medium mb-8"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        Learn about GST
-      </motion.h2>
+    <div className="bg-gray-50 text-center py-20 px-4 my-20 flex flex-col items-center justify-center gap-10 w-max mx-auto rounded-3xl ">
       <motion.div
-        className="bg-slate-500/20 rounded-xl p-4 md:p-8 lg:p-12 w-full max-w-6xl"
+        className=" rounded-xl p-4 md:p-8 lg:p-12 w-max "
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -27,7 +19,7 @@ export default function Learn() {
             <motion.button
               key={tab.id}
               onClick={() => setActiveTab(tab)}
-              className={`px-3 py-1 md:px-6 md:py-2 rounded-lg font-medium text-sm md:text-base ${
+              className={`px-8 py-2 md:px-14 md:py-3 rounded-lg font-medium text-sm md:text-base uppercase ${
                 activeTab.id === tab.id
                   ? "bg-black text-white"
                   : "bg-white text-black border border-gray-300"
@@ -35,7 +27,7 @@ export default function Learn() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {tab.label}
+              {tab.id}
             </motion.button>
           ))}
         </div>
@@ -50,11 +42,18 @@ export default function Learn() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <h3 className="text-3xl md:text-5xl lg:text-7xl font-medium">
+            <h3 className="text-3xl md:text-5xl lg:text-7xl font-et-light text-gray-800">
               {activeTab.label}
             </h3>
-            <p className="text-xl md:text-2xl lg:text-3xl text-gray-600">
+            <div className="w-[90%] h-[1px] bg-slate-200 mx-auto my-16" />
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-600">
               {activeTab.content}
+            </p>
+            <h4 className="text-2xl lg:text-3xl font-medium text-gray-800">
+              DOCUMENT NEEDED:
+            </h4>
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-600">
+              {activeTab.documents}
             </p>
           </motion.div>
         </whileInViewPresence>

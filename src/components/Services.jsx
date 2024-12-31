@@ -11,30 +11,26 @@ const tags = [
 
 export default function Services() {
   return (
-    <div className="min-h-screen text-center text-white py-20 px-4 max-w-7xl mx-auto ">
+    <div className="min-h-screen text-center text-neutral-950 py-20 px-4 max-w-7xl mx-auto ">
       <motion.h2
-        className="text-3xl md:text-5xl mb-4"
+        className="text-6xl md:text-8xl max-w-4xl mx-auto font-extralight text-center mb-4"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Let us handle the headaches,
+        Hi, I&#39;m Shaik Akram Basha
       </motion.h2>
       <motion.p
-        className="text-3xl md:text-5xl mb-8"
+        className="text-lg max-w-5xl mx-auto md:text-xl mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        so you can focus on what really matters
-      </motion.p>
-      <motion.p
-        className="text-lg mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        Just embed Check into your platform, then leave the rest to us.
+        A tax consultant with 5+ years of expertise in ITR filing, GST services,
+        and tax planning. I provide accurate, stress-free solutions,
+        personalized guidance, and full post-filing support. With transparent
+        pricing and remote consultations, I ensure your financial well-being and
+        maximize your tax benefits effortlessly.{" "}
       </motion.p>
 
       <div className="flex flex-col lg:flex-row justify-center gap-8 mb-16">
@@ -62,15 +58,6 @@ export default function Services() {
               ))}
           </React.Fragment>
         ))}
-      </motion.div>
-
-      <motion.div
-        className="flex justify-start"
-        initial={{ opacity: 0, x: -50, scale: 1.5 }}
-        whileInView={{ opacity: 1, x: 0, scale: 1 }}
-        transition={{ duration: 0.5, delay: 1.2 }}
-      >
-        <Image src="/1.svg" alt="Illustration" width={150} height={100} />
       </motion.div>
     </div>
   );

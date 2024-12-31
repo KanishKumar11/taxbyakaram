@@ -7,21 +7,21 @@ import BoxReveal from "./ui/box-reveal";
 
 export default function Hero() {
   return (
-    <div className="my-20 content-center max-w-7xl mx-auto text-center text-balance space-y-8 px-4 flex flex-col items-center">
-      <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+    <div className="mt-20 content-center max-w-7xl mx-auto text-center text-balance gap-8 px-4 flex flex-col items-center">
+      <BoxReveal boxColor={"#056285"} duration={0.5}>
         <motion.h2
-          className="text-4xl md:text-6xl text-slate-50"
+          className="text-4xl md:text-6xl text-slate-50 font-extralight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          We handle the complexity of GST & Tax. So you can focus on your
-          business.
+          We handle the complexity of GST & Tax. So you can focus on
+          yourbusiness.{" "}
         </motion.h2>
       </BoxReveal>
-      <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+      <BoxReveal boxColor={"#056285"} duration={0.5}>
         <motion.p
-          className="text-xl md:text-2xl text-slate-300"
+          className="text-base md:text-lg text-slate-50"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -29,43 +29,26 @@ export default function Hero() {
           Check into your platform, then leave the rest to us.
         </motion.p>
       </BoxReveal>
-      <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+      <BoxReveal boxColor={"#056285"} duration={0.5}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <Button className="px-10 md:px-20 py-4 md:py-6 text-lg bg-slate-50 text-neutral-950 font-medium">
-            Contact me
+            Learn about tax filing
           </Button>
         </motion.div>
       </BoxReveal>
 
-      <div className="flex flex-col md:flex-row gap-10 items-center justify-center">
-        <div className="space-y-4 ">
-          {data[0].map((item, idx) => (
-            <Card {...item} key={idx} direction={"left"} delay={idx * 0.1} />
-          ))}
-        </div>
-        <motion.div
-          className="relative h-72 w-[250px] "
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <Image src="/1.svg" alt="Hero Image" fill />
-        </motion.div>
-        <div className="space-y-4 ">
-          {data[1].map((item, idx) => (
-            <Card
-              {...item}
-              key={idx}
-              direction={"right"}
-              delay={(idx + 3) * 0.1}
-            />
-          ))}
-        </div>
-      </div>
+      <motion.div
+        className="relative lg:h-[1000px] h-[600px] lg:-mb-[500px] -mb-[300px] w-full "
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+      >
+        <Image src="/1.svg" alt="Hero Image" fill />
+      </motion.div>
     </div>
   );
 }

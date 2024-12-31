@@ -22,7 +22,7 @@ export default function Navbar() {
     <NavbarContainer
       maxWidth="lg"
       onMenuOpenChange={setIsMenuOpen}
-      className="py-2 bg-[#D9D9D9]/10 px-12 rounded-[13px] max-w-4xl mx-auto text-slate-50"
+      className="py-2 bg-[#056285] px-12 rounded-[13px]   max-w-4xl mx-auto text-slate-50 sticky top-0"
       shouldHideOnScroll
     >
       <NavbarContent>
@@ -59,7 +59,7 @@ export default function Navbar() {
           </Button>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu>
+      <NavbarMenu className="pt-20">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link

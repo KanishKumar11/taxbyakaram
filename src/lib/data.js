@@ -62,33 +62,35 @@ export const services = [
 ];
 export const learnTabs = [
   {
-    id: "gst-challan",
-    label: "GST Challan",
+    id: "itr-1",
+    label: "When is ITR-1 Filed?",
+
     content:
-      "Tired of unqualified leads? Amplemarket’s AI processes millions of unique signals to find your next customer and increase conversion rates by up to 50%.",
+      "For salaried individuals with income up to ₹50 lakhs. Includes other income like savings account interest.Excludes business or capital gains income.",
+    documents: "Adhaar Card,PAN Card, GST",
   },
   {
-    id: "gst-filing",
-    label: "GST Filing",
+    id: "itr-2",
+    label: "When is ITR-2 Filed?",
+
     content:
-      "Learn how to file GST with our step-by-step guide and simplify your tax submission process.",
+      "For individuals and HUFs with income above ₹50 lakhs. Includes business or capital gains income.Excludes income from profession.",
+    documents: "Adhaar Card,PAN Card, GST",
   },
   {
-    id: "gst-registration",
-    label: "GST Registration",
+    id: "itr-3",
+    label: "When is ITR-3 Filed?",
+
     content:
-      "Understand the process of GST registration to ensure your business complies with government regulations.",
+      "For individuals and HUFs with income from profession. Includes business or capital gains income.Excludes income from salary.",
+    documents: "Adhaar Card,PAN Card, GST",
   },
   {
-    id: "gst-refund",
-    label: "GST Refund",
+    id: "itr-4",
+    label: "When is ITR-4 Filed?",
+
     content:
-      "Know the eligibility and process for claiming GST refunds with our detailed guide.",
-  },
-  {
-    id: "gst-invoice",
-    label: "GST Invoice",
-    content:
-      "Discover the essentials of creating GST-compliant invoices for your business.",
+      "For individuals and HUFs with income from business or profession. Includes income from salary or capital gains.Excludes income from salary.",
+    documents: "Adhaar Card,PAN Card, GST",
   },
 ];

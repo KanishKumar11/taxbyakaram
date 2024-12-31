@@ -5,12 +5,12 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <div className=" text-white euclid">
+    <div className=" text-neutral-900 euclid">
       <div className="mx-auto max-w-7xl lg:px-20 py-10 px-8">
         <div className=" flex items-center justify-between">
           <div className="flex gap-10 flex-row flex-wrap">
             <div className="flex flex-col gap-5 w-1/2">
-              <h3 className="text-4xl text-slate-50">
+              <h3 className="text-4xl text-slate-950">
                 <Logo />
               </h3>
               <p>Address : #731, E & F Block , Kuvempunagar, Mysore - 570023</p>
@@ -18,7 +18,7 @@ const Footer = () => {
               <p>Phone: +91 8296024720</p>
             </div>
             <div className="flex gap-5 flex-col">
-              <h3 className="text-3xl text-[#E7E0F5]">Company</h3>
+              <h3 className="text-3xl text-[#000000]">Company</h3>
 
               <div className=" flex flex-col gap-5">
                 <Link href="#">About us</Link>

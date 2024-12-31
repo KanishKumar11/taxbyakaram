@@ -7,7 +7,7 @@ const content = [
   {
     title: "Collaborative Editing",
     description:
-      "Taxbyakram is a premier design, development, and branding agency headquartered in Chennai. ",
+      "Hi, I’m Shaik Akram Basha, a dedicated tax consultant and finance enthusiast with over 5 years of experience in helping clients plan and file their taxes effectively.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         Collaborative Editing
@@ -17,7 +17,7 @@ const content = [
   {
     title: "Real time changes",
     description:
-      "Specializing in delivering top-tier creative solutions, Taxbyakram is dedicated to helping businesses enhance their brand identity, develop innovative digital products, and achieve their strategic goals with excellence and precision.",
+      "With expertise in Income Tax Return (ITR) filing, GST services, and financial compliance, I aim to make tax processes simple, accurate, and stress-free for my clients. Whether you’re a salaried individual, an entrepreneur, or a stock market enthusiast, I tailor my services to your unique needs.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
@@ -33,7 +33,7 @@ const content = [
   {
     title: "Version control",
     description:
-      "Our team consists of experienced designers, developers, and branding experts who are passionate about bringing creative ideas to life.  Our team’s innovative approach and dedication to quality make Taxbyakram a trusted partner for businesses looking to elevate their brand and digital presence.",
+      "5+ years of experience in tax planning and filing, ensuring maximum accuracy and compliance.\nProven track record in filing accurate ITRs and handling GST compliance.\nFull support after filing your taxes, including assistance with any notices or queries from the Income Tax Department.\nPersonalized guidance to help you save time and maximize your tax benefits.\nTransparent pricing with no hidden costs.\nRemote consultations to make services accessible and convenient.\nWhen you choose me, you’re not just hiring a tax consultant—you’re gaining a reliable partner committed to your financial well-being.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
         Version control

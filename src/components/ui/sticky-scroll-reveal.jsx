@@ -72,42 +72,15 @@ const StickyScroll = ({ content, contentClassName }) => {
           alt=""
           width={250}
           height={200}
-          className="absolute -left-[3%] lg:top-[20%] top-[20%] z-10 lg:w-[250px] w-[130px]"
+          className="absolute left-10 lg:top-[20%] top-[20%] z-10 lg:w-[150px] w-[100px]"
         />
-        <Image
-          src="/images/3.svg"
-          alt=""
-          width={160}
-          height={250}
-          className="absolute lg:-left-[0%] lg:h-[250px] -left-10 h-[130px] bottom-[24%] z-10"
-        />
-        <Image
-          src="/images/4.svg"
-          alt=""
-          width={180}
-          height={150}
-          className="absolute lg:left-[13%] left-[0%] lg:w-[180px] w-[100px] lg:bottom-[26%] bottom-[35%]  z-0"
-        />
+
         <Image
           src="/images/5.svg"
           alt=""
           width={150}
           height={150}
-          className="absolute lg:right-[3%] right-0 lg:w-[150px] w-[80px]   top-[6%] z-0"
-        />
-        <Image
-          src="/images/6.svg"
-          alt=""
-          width={300}
-          height={250}
-          className="absolute -right-[3%] lg:w-[250px] w-[140px] top-[20%] z-0"
-        />
-        <Image
-          src="/images/7.svg"
-          alt=""
-          width={300}
-          height={250}
-          className="absolute -right-[3%] lg:w-[300px] w-[140px] lg:bottom-[26%] bottom-[45%] z-0"
+          className="absolute lg:right-[3%] right-0 lg:w-[130px] w-[60px]   top-[24%] z-0"
         />
       </div>
       <div className="div relative flex items-start px-4">
@@ -121,7 +94,7 @@ const StickyScroll = ({ content, contentClassName }) => {
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-lg text-black lg:text-4xl max-w-2xl mt-10"
+                className="text-lg text-black lg:text-3xl max-w-2xl mt-10 whitespace-pre-line"
               >
                 {item.description}
               </motion.p>
