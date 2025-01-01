@@ -22,8 +22,8 @@ export default function Navbar() {
     <NavbarContainer
       maxWidth="lg"
       onMenuOpenChange={setIsMenuOpen}
-      className="py-2 bg-[#056285] px-12 rounded-[13px]   max-w-4xl mx-auto text-slate-50 sticky top-0"
-      shouldHideOnScroll
+      className="py-2 bg-[#056285] lg:px-12 rounded-[13px]   max-w-4xl mx-auto text-slate-50  top-0"
+      // shouldHideOnScroll
     >
       <NavbarContent>
         <NavbarMenuToggle
@@ -45,15 +45,15 @@ export default function Navbar() {
         ))}
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem>
+        <NavbarItem className="">
           <Button
             as={Link}
             color="primary"
             href="#"
             variant="flat"
-            className="relative inline-flex h-12 bg-slate-50 text-neutral-900 rounded-2xloverflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            className="relative inline-flex lg:h-12 bg-slate-50 text-neutral-900 rounded-2xl overflow-hidden  p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
           >
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full  px-8 py-1 text-sm font-medium bg-slate-50 text-neutral-900 backdrop-blur-3xl">
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-4 lg:px-8 lg:py-1 lg:text-sm text-xs font-medium bg-slate-50 text-neutral-900 backdrop-blur-3xl">
               Contact Us
             </span>
           </Button>

@@ -4,24 +4,28 @@ import React from "react";
 import { motion } from "framer-motion";
 import { data } from "@/lib/data";
 import BoxReveal from "./ui/box-reveal";
+import { Simula } from "@/lib/fonts";
 
 export default function Hero() {
   return (
-    <div className="mt-20 content-center max-w-7xl mx-auto text-center text-balance gap-8 px-4 flex flex-col items-center">
+    <div className="mt-20 content-center max-w-7xl mx-auto text-center  gap-8 px-4 flex flex-col items-center">
       <BoxReveal boxColor={"#056285"} duration={0.5}>
         <motion.h2
-          className="text-4xl md:text-6xl text-slate-50 font-extralight"
+          className={cn(
+            "text-2xl md:text-6xl text-slate-50 font-extralight",
+            Simula.className
+          )}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          We handle the complexity of GST & Tax. So you can focus on
-          yourbusiness.{" "}
+          We handle the complexity of GST & Tax. So you can focus on your
+          business.{" "}
         </motion.h2>
       </BoxReveal>
       <BoxReveal boxColor={"#056285"} duration={0.5}>
         <motion.p
-          className="text-base md:text-lg text-slate-50"
+          className="text-base md:text-lg text-slate-50 font-light"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}

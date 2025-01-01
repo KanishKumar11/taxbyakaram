@@ -38,24 +38,44 @@ export const services = [
   {
     icon: "/2.svg",
     title: "Service number 1",
-    description:
-      "Sell and manage multiple vendors effortlessly under one platform.",
+    description: "Income Tax Services",
     bgColor: "rgba(221,214,254,1)",
     color: "rgba(86,32,183,1)",
   },
   {
-    icon: "/3.svg",
+    icon: "/2.svg",
     title: "Service number 2",
-    description:
-      "Sell and manage multiple vendors effortlessly under one platform.",
+    description: "Strategize your taxes effectively to minimize liabilities.",
     bgColor: "rgba(249,219,175,1)",
     color: "rgba(148,48,26,1)",
   },
   {
-    icon: "/4.svg",
+    icon: "/2.svg",
     title: "Service number 3",
     description:
-      "Sell and manage multiple vendors effortlessly under one platform.",
+      "Income Tax Filing: Filing of ITR-1, ITR-2, ITR-3, and ITR-4 for individuals and businesses.",
+    bgColor: "rgba(178,204,255,1)",
+    color: "rgba(0,64,193,1)",
+  },
+  {
+    icon: "/2.svg",
+    title: "Service number 3",
+    description: "GST Services",
+    bgColor: "rgba(178,204,255,1)",
+    color: "rgba(0,64,193,1)",
+  },
+  {
+    icon: "/2.svg",
+    title: "Service number 3",
+    description: "Registration services for businesses.",
+    bgColor: "rgba(178,204,255,1)",
+    color: "rgba(0,64,193,1)",
+  },
+  {
+    icon: "/2.svg",
+    title: "Service number 3",
+    description:
+      "Preparation of Projections: Detailed financial projections to support business decisions and loan applications.",
     bgColor: "rgba(178,204,255,1)",
     color: "rgba(0,64,193,1)",
   },

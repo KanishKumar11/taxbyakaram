@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Simula } from "@/lib/fonts";
 
 const tags = [
   { text: "Our services", color: "bg-green-400" },
@@ -13,7 +14,10 @@ export default function Services() {
   return (
     <div className="min-h-screen text-center text-neutral-950 py-20 px-4 max-w-7xl mx-auto ">
       <motion.h2
-        className="text-6xl md:text-8xl max-w-4xl mx-auto font-extralight text-center mb-4"
+        className={cn(
+          "text-4xl md:text-8xl max-w-4xl mx-auto font-extralight text-center mb-4",
+          Simula.className
+        )}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -21,7 +25,7 @@ export default function Services() {
         Hi, I&#39;m Shaik Akram Basha
       </motion.h2>
       <motion.p
-        className="text-lg max-w-5xl mx-auto md:text-xl mb-8"
+        className="text-base max-w-5xl mx-auto md:text-xl mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -33,13 +37,13 @@ export default function Services() {
         maximize your tax benefits effortlessly.{" "}
       </motion.p>
 
-      <div className="flex flex-col lg:flex-row justify-center gap-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
         {services.map((service, index) => (
           <ServiceCard key={index} service={service} index={index} />
         ))}
       </div>
 
-      <motion.div
+      {/* <motion.div
         className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +62,7 @@ export default function Services() {
               ))}
           </React.Fragment>
         ))}
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }
@@ -66,16 +70,13 @@ export default function Services() {
 function ServiceCard({ service, index }) {
   return (
     <motion.div
-      className={cn(
-        "rounded-lg p-8 items-start text-start shadow-lg",
-        service.bgColor
-      )}
-      style={{ color: service.color, background: service.bgColor }}
+      className={cn("rounded-lg px-8 items-center  gap-4 text-start flex ")}
+      // style={{ color: service.color, background: service.bgColor }}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 * (index + 1) }}
     >
-      <div className="flex justify-start mb-4">
+      <div className="flex justify-start mb-4 h-10 w-10 aspect-square">
         <Image
           src={service.icon}
           alt={service.title}
@@ -83,10 +84,10 @@ function ServiceCard({ service, index }) {
           height={120}
         />
       </div>
-      <h3 className="text-2xl lg:text-4xl font-semibold mb-2">
+      {/* <h3 className="text-2xl lg:text-4xl font-semibold mb-2">
         {service.title}
-      </h3>
-      <p className="text-lg lg:text-xl mb-4">{service.description}</p>
+      </h3> */}
+      <p className="text-base lg:text-xl mb-4">{service.description}</p>
     </motion.div>
   );
 }
