@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { learnTabs } from "@/lib/data";
+import { learnGSTTabs } from "@/lib/data";
 import { Button } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
 import { Simula } from "@/lib/fonts";
 import Link from "next/link";
 
-export default function Learn() {
-  const [activeTab, setActiveTab] = useState(learnTabs[0]);
+export default function LearnGST() {
+  const [activeTab, setActiveTab] = useState(learnGSTTabs[0]);
 
   return (
     <div className="bg-gray-50 text-center py-20 lg:px-4 my-20 flex flex-col items-center justify-center gap-10 lg:w-max mx-auto rounded-3xl ">
@@ -19,7 +19,7 @@ export default function Learn() {
       >
         {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 ">
-          {learnTabs.map((tab) => (
+          {learnGSTTabs.map((tab) => (
             <motion.button
               key={tab.id}
               onClick={() => setActiveTab(tab)}
@@ -55,7 +55,7 @@ export default function Learn() {
               {activeTab.label}
             </h3>
             <div className="w-[90%] h-[1px] bg-slate-200 mx-auto my-16" />
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-600">
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-600 whitespace-pre-line">
               {activeTab.content}
             </p>
 

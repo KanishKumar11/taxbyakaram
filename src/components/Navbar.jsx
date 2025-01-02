@@ -16,14 +16,14 @@ import Logo from "./Logo";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = ["About", "Services", "Learn"];
+  const menuItems = ["About", "Learn", "Services"];
 
   return (
     <NavbarContainer
       maxWidth="lg"
       onMenuOpenChange={setIsMenuOpen}
-      className="py-2 bg-[#056285] lg:px-12 rounded-[13px]   max-w-4xl mx-auto text-slate-50  top-0"
-      // shouldHideOnScroll
+      className="py-2 bg-[rgba(0,173,238,1)] lg:px-12     mx-auto text-slate-50  top-0"
+      shouldHideOnScroll
     >
       <NavbarContent>
         <NavbarMenuToggle
@@ -38,7 +38,11 @@ export default function Navbar() {
       <NavbarContent className="hidden md:flex gap-10   h-[80%]" justify="end">
         {menuItems.map((item, index) => (
           <NavbarItem key={item - index}>
-            <Link color="" className="text-slate-50" href="#">
+            <Link
+              color=""
+              className="text-slate-50"
+              href={index < 2 ? `/#${item.toLowerCase()}` : `/services`}
+            >
               {item}
             </Link>
           </NavbarItem>
@@ -71,7 +75,7 @@ export default function Navbar() {
                   : "foreground"
               }
               className="w-full"
-              href="#"
+              href={index < 2 ? `/#${item.toLowerCase()}` : `/services`}
               size="lg"
             >
               {item}

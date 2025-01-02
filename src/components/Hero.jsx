@@ -12,20 +12,30 @@ export default function Hero() {
       <BoxReveal boxColor={"#056285"} duration={0.5}>
         <motion.h2
           className={cn(
-            "text-2xl md:text-6xl text-slate-50 font-extralight",
+            "text-2xl md:text-6xl max-w-3xl mx-auto text-slate-50 font-extralight",
             Simula.className
           )}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          We handle the complexity of GST & Tax. So you can focus on your
-          business.{" "}
+          We handle the complexity of GST & Tax. <br />
+        </motion.h2>
+        <motion.h2
+          className={cn(
+            "text-2xl md:text-6xl max-w-5xl  text-slate-50 font-extralight",
+            Simula.className
+          )}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          So you can focus on your business.{" "}
         </motion.h2>
       </BoxReveal>
       <BoxReveal boxColor={"#056285"} duration={0.5}>
         <motion.p
-          className="text-base md:text-lg text-slate-50 font-light"
+          className="text-lg md:text-2xl text-slate-50 font-light"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
