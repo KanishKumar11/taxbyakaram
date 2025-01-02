@@ -60,7 +60,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Confused about the right ITR for you? Here&#39;s a quick guide
+          Wanna know more about GST ? Here&#39;s a quick guide
         </motion.p>
         <LearnGST />
       </div>
