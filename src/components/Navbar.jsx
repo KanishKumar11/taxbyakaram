@@ -23,7 +23,6 @@ export default function Navbar() {
       maxWidth="lg"
       onMenuOpenChange={setIsMenuOpen}
       className="py-2 bg-[rgba(0,173,238,1)] lg:px-12     mx-auto text-slate-50  top-0"
-      shouldHideOnScroll
     >
       <NavbarContent>
         <NavbarMenuToggle
@@ -35,7 +34,10 @@ export default function Navbar() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden md:flex gap-10   h-[80%]" justify="end">
+      <NavbarContent
+        className="hidden md:flex gap-10 ml-[30%]   h-[80%]"
+        justify="end"
+      >
         {menuItems.map((item, index) => (
           <NavbarItem key={item - index}>
             <Link
