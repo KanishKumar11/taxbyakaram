@@ -13,7 +13,7 @@ export default function Services() {
     >
       <motion.h2
         className={cn(
-          "text-4xl md:text-8xl max-w-4xl mx-auto font-extralight text-center mb-4",
+          "text-4xl md:text-8xl max-w-6xl mx-auto font-extralight text-center mb-4",
           Simula.className
         )}
         initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export default function Services() {
         Hi, I&#39;m Shaik Akram Basha
       </motion.h2>
       <motion.p
-        className="text-base max-w-5xl mx-auto text-justify md:text-xl mb-8"
+        className="text-base max-w-6xl mx-auto text-justify md:text-2xl mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}

@@ -62,7 +62,7 @@ export default function LearnGST() {
             <Button
               as={Link}
               href="https://wa.me/+919949947465"
-              className="bg-[rgba(1,154,212,1)] text-white px-8 lg:py-6 lg:px-12 text-base lg:text-xl rounded-lg"
+              className="bg-[#1E0938] text-white px-8 lg:py-8 lg:px-12 text-base lg:text-xl rounded-xl"
             >
               Contact us
             </Button>
