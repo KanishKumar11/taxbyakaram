@@ -58,11 +58,6 @@ export default function ITR1Page() {
           <h3 className="text-3xl font-bold">
             Documents Required for GST Registration
           </h3>
-          <p className="mt-2">
-            Filing Income Tax Return (ITR-1) in India requires you to gather
-            certain documents and details to ensure a smooth and accurate filing
-            process.
-          </p>
 
           <ul className="mt-4 space-y-6">
             {documents.map((section, index) => (

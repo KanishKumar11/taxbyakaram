@@ -16,6 +16,7 @@ import Logo from "./Logo";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState("");
+  const [activeTaxSubmenu, setActiveTaxSubmenu] = useState(false);
 
   const menuItems = ["About", "Learn", "Services"];
 
@@ -37,7 +38,12 @@ export default function Navbar() {
   ];
 
   const toggleSubmenu = (menu) => {
-    setActiveSubmenu(activeSubmenu === menu ? "" : menu);
+    if (menu === "services") {
+      setActiveSubmenu(activeSubmenu === menu ? "" : menu);
+      setActiveTaxSubmenu(false); // Reset tax submenu when toggling services
+    } else if (menu === "tax-filing") {
+      setActiveTaxSubmenu(!activeTaxSubmenu);
+    }
   };
 
   return (
@@ -119,7 +125,7 @@ export default function Navbar() {
               <>
                 <NavbarMenuItem>
                   <div
-                    className="w-full cursor-pointer py-2"
+                    className="w-full cursor-pointer "
                     onClick={() => toggleSubmenu("services")}
                   >
                     {item}
@@ -130,32 +136,36 @@ export default function Navbar() {
                     {serviceOptions.map((service) => (
                       <div key={service.name}>
                         <NavbarMenuItem>
-                          <div
-                            className="w-full cursor-pointer py-2"
-                            onClick={() =>
-                              service.subItems
-                                ? toggleSubmenu(`tax-filing-${service.name}`)
-                                : null
-                            }
-                          >
-                            {service.name}
-                          </div>
-                        </NavbarMenuItem>
-                        {service.subItems &&
-                          activeSubmenu === `tax-filing-${service.name}` && (
-                            <div className="pl-4">
-                              {service.subItems.map((subItem) => (
-                                <NavbarMenuItem key={subItem.name}>
-                                  <Link
-                                    href={subItem.href}
-                                    className="w-full py-2 text-gray-700"
-                                  >
-                                    {subItem.name}
-                                  </Link>
-                                </NavbarMenuItem>
-                              ))}
+                          {service.subItems ? (
+                            <div
+                              className="w-full cursor-pointer py-2"
+                              onClick={() => toggleSubmenu("tax-filing")}
+                            >
+                              {service.name}
                             </div>
+                          ) : (
+                            <Link
+                              href={service.href}
+                              className="w-full block py-2"
+                            >
+                              {service.name}
+                            </Link>
                           )}
+                        </NavbarMenuItem>
+                        {service.subItems && activeTaxSubmenu && (
+                          <div className="pl-4">
+                            {service.subItems.map((subItem) => (
+                              <NavbarMenuItem key={subItem.name}>
+                                <Link
+                                  href={subItem.href}
+                                  className="w-full py-2 text-gray-700"
+                                >
+                                  {subItem.name}
+                                </Link>
+                              </NavbarMenuItem>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>

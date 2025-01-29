@@ -16,7 +16,7 @@ export default function Hero() {
             Offering customized solutions tailored to your specific tax
             situation and financial goals.
           </p>
-          <div className="flex flex-row gap-5 items-center max-lg:justify-center">
+          <div className="flex flex-row gap-5 items-center ">
             <Button className="bg-white px-8 py-4">Contact Us</Button>
             <Link href="/#services" className="underline underline-offset-2">
               Our services
