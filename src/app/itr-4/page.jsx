@@ -95,7 +95,7 @@ export default function ITR4Page() {
       <div className="max-w-7xl mx-auto space-y-10 p-6">
         <div className="bg-[#96259C] text-white p-10 rounded-xl text-center flex flex-col items-center">
           <h2 className={`text-4xl lg:text-6xl ${Simula.className}`}>
-            Want to file ITR-5
+            Want to file ITR-4
           </h2>
           <p className="text-lg mt-2">
             We at Taab/Akram are here to handle it all for you.
