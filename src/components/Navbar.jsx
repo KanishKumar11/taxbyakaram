@@ -10,21 +10,35 @@ import {
   NavbarMenuItem,
   Link,
   Button,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
 } from "@nextui-org/react";
 import Logo from "./Logo";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLearnOpen, setIsLearnOpen] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState("");
 
   const menuItems = ["About", "Learn", "Services"];
+
+  const taxFilingOptions = [
+    { name: "ITR-1", href: "/itr-1" },
+    { name: "ITR-2", href: "/itr-2" },
+    { name: "ITR-3", href: "/itr-3" },
+    { name: "ITR-4", href: "/itr-4" },
+  ];
+
+  const serviceOptions = [
+    {
+      name: "Tax Filing",
+      href: "#",
+      subItems: taxFilingOptions,
+    },
+    { name: "GST", href: "/gst" },
+    { name: "Tax Return(Coming Soon)", href: "#" },
+  ];
+
+  const toggleSubmenu = (menu) => {
+    setActiveSubmenu(activeSubmenu === menu ? "" : menu);
+  };
 
   return (
     <NavbarContainer
@@ -42,46 +56,52 @@ export default function Navbar() {
         </NavbarBrand>
       </NavbarContent>
 
+      {/* Desktop Navigation */}
       <NavbarContent
         className="hidden md:flex gap-10 ml-[30%] h-[80%]"
         justify="end"
       >
         {menuItems.map((item, index) => (
-          <NavbarItem key={item - index}>
-            {item === "Learn" ? (
-              <Popover placement="bottom" showArrow={true}>
-                <PopoverTrigger>
-                  <Link color="" className="cursor-pointer" href="#">
-                    {item}
-                  </Link>
-                </PopoverTrigger>
-                <PopoverContent className="p-4 bg-white/90 backdrop-blur-md rounded-lg shadow-lg">
+          <NavbarItem key={`${item}-${index}`} className="relative group">
+            {item === "Services" ? (
+              <div className="relative">
+                <Link color="" className="cursor-pointer" href="#">
+                  {item}
+                </Link>
+                <div className="absolute left-0 hidden group-hover:block w-48 bg-white/90 backdrop-blur-md rounded-lg shadow-lg p-4 z-50">
                   <div className="flex flex-col gap-2">
-                    <Link
-                      href="#"
-                      className="text-sm text-gray-700 hover:text-purple-600"
-                    >
-                      Tax Filing(Coming soon)
-                    </Link>
-                    <Link
-                      href="/gst"
-                      className="text-sm text-gray-700 hover:text-purple-600"
-                    >
-                      GST
-                    </Link>
-                    <Link
-                      href="#"
-                      className="text-sm text-gray-700 hover:text-purple-600"
-                    >
-                      Tax Return(Coming soon)
-                    </Link>
+                    {serviceOptions.map((service) => (
+                      <div
+                        key={service.name}
+                        className="relative group/service"
+                      >
+                        <Link
+                          href={service.href}
+                          className="text-sm text-gray-700 hover:text-purple-600 cursor-pointer"
+                        >
+                          {service.name}
+                        </Link>
+                        {service.subItems && (
+                          <div className="absolute left-[90%] top-0 hidden group-hover/service:block w-40 bg-white/90 backdrop-blur-md rounded-lg shadow-lg p-2 ml-2">
+                            {service.subItems.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block text-sm text-gray-700 hover:text-purple-600 py-1"
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                </PopoverContent>
-              </Popover>
+                </div>
+              </div>
             ) : (
               <Link
                 color=""
-                className=""
                 href={index < 2 ? `/#${item.toLowerCase()}` : `/services`}
               >
                 {item}
@@ -90,8 +110,75 @@ export default function Navbar() {
           </NavbarItem>
         ))}
       </NavbarContent>
+
+      {/* Mobile Navigation */}
+      <NavbarMenu className="pt-6">
+        {menuItems.map((item, index) => (
+          <div key={`${item}-${index}`}>
+            {item === "Services" ? (
+              <>
+                <NavbarMenuItem>
+                  <div
+                    className="w-full cursor-pointer py-2"
+                    onClick={() => toggleSubmenu("services")}
+                  >
+                    {item}
+                  </div>
+                </NavbarMenuItem>
+                {activeSubmenu === "services" && (
+                  <div className="pl-4">
+                    {serviceOptions.map((service) => (
+                      <div key={service.name}>
+                        <NavbarMenuItem>
+                          <div
+                            className="w-full cursor-pointer py-2"
+                            onClick={() =>
+                              service.subItems
+                                ? toggleSubmenu(`tax-filing-${service.name}`)
+                                : null
+                            }
+                          >
+                            {service.name}
+                          </div>
+                        </NavbarMenuItem>
+                        {service.subItems &&
+                          activeSubmenu === `tax-filing-${service.name}` && (
+                            <div className="pl-4">
+                              {service.subItems.map((subItem) => (
+                                <NavbarMenuItem key={subItem.name}>
+                                  <Link
+                                    href={subItem.href}
+                                    className="w-full py-2 text-gray-700"
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                </NavbarMenuItem>
+                              ))}
+                            </div>
+                          )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : (
+              <NavbarMenuItem>
+                <Link
+                  color=""
+                  className="w-full"
+                  href={index < 2 ? `/#${item.toLowerCase()}` : `/services`}
+                  size="lg"
+                >
+                  {item}
+                </Link>
+              </NavbarMenuItem>
+            )}
+          </div>
+        ))}
+      </NavbarMenu>
+
       <NavbarContent justify="end">
-        <NavbarItem className="">
+        <NavbarItem>
           <Button
             as={Link}
             color="primary"
@@ -105,51 +192,6 @@ export default function Navbar() {
           </Button>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu className="pt-20">
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            {item === "Learn" ? (
-              <Dropdown>
-                <DropdownTrigger>
-                  <Link
-                    color="foreground"
-                    className="w-full cursor-pointer"
-                    onClick={() => setIsLearnOpen(!isLearnOpen)}
-                  >
-                    {item}
-                  </Link>
-                </DropdownTrigger>
-                <DropdownMenu aria-label="Learn dropdown">
-                  <DropdownItem key="tax-filing" href="/tax-filing">
-                    Tax Filing
-                  </DropdownItem>
-                  <DropdownItem key="gst" href="/gst">
-                    GST
-                  </DropdownItem>
-                  <DropdownItem key="tax-return" href="/tax-return">
-                    Tax Return
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            ) : (
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-                }
-                className="w-full"
-                href={index < 2 ? `/#${item.toLowerCase()}` : `/services`}
-                size="lg"
-              >
-                {item}
-              </Link>
-            )}
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
     </NavbarContainer>
   );
 }

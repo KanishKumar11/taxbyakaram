@@ -44,7 +44,7 @@ export default function ITR1Page() {
       <div className="max-w-7xl mx-auto space-y-10 p-6">
         <div className="bg-[#0A66C2] text-white p-10 rounded-xl text-center flex flex-col items-center">
           <h2 className={`text-4xl lg:text-6xl ${Simula.className}`}>
-            Want to file ITR-1
+            Want to file GST
           </h2>
           <p className="text-lg mt-2">
             We at TaxByAkram are here to handle it all for you.
@@ -55,7 +55,9 @@ export default function ITR1Page() {
         </div>
 
         <div>
-          <h3 className="text-3xl font-bold">Documents needed to file ITR-1</h3>
+          <h3 className="text-3xl font-bold">
+            Documents Required for GST Registration
+          </h3>
           <p className="mt-2">
             Filing Income Tax Return (ITR-1) in India requires you to gather
             certain documents and details to ensure a smooth and accurate filing
