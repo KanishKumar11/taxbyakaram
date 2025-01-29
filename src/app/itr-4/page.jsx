@@ -88,14 +88,14 @@ const documents = [
   },
 ];
 
-export default function ITR3Page() {
+export default function ITR4Page() {
   return (
     <>
       <Navbar />
       <div className="max-w-7xl mx-auto space-y-10 p-6">
         <div className="bg-[#96259C] text-white p-10 rounded-xl text-center flex flex-col items-center">
           <h2 className={`text-4xl lg:text-6xl ${Simula.className}`}>
-            Want to file ITR-3
+            Want to file ITR-5
           </h2>
           <p className="text-lg mt-2">
             We at Taab/Akram are here to handle it all for you.
@@ -106,9 +106,9 @@ export default function ITR3Page() {
         </div>
 
         <div>
-          <h3 className="text-3xl font-bold">Documents needed to file ITR-3</h3>
+          <h3 className="text-3xl font-bold">Documents needed to file ITR-4</h3>
           <p className="mt-2">
-            Filing Income Tax Return (ITR-3) in India requires you to gather
+            Filing Income Tax Return (ITR-4) in India requires you to gather
             certain documents and details to ensure a smooth and accurate filing
             process.
           </p>
