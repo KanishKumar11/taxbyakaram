@@ -36,7 +36,7 @@ export default function Navbar() {
       subItems: taxFilingOptions,
     },
     { name: "GST", href: "/gst" },
-    { name: "Tax Return (Coming Soon)", href: "#" },
+    { name: "TDS Return (Coming Soon)", href: "#" },
     {
       name: "Other Services",
       href: "#",
