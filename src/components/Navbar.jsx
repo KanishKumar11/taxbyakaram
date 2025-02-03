@@ -15,8 +15,10 @@ import Logo from "./Logo";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState("");
-  const [activeTaxSubmenu, setActiveTaxSubmenu] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState(""); // Controls "Services"
+  const [activeTaxSubmenu, setActiveTaxSubmenu] = useState(false); // Controls "Tax Filing"
+  const [activeOtherServicesSubmenu, setActiveOtherServicesSubmenu] =
+    useState(false); // Controls "Other Services"
 
   const menuItems = ["About", "Learn", "Services"];
 
@@ -34,15 +36,29 @@ export default function Navbar() {
       subItems: taxFilingOptions,
     },
     { name: "GST", href: "/gst" },
-    { name: "Tax Return(Coming Soon)", href: "#" },
+    { name: "Tax Return (Coming Soon)", href: "#" },
+    {
+      name: "Other Services",
+      href: "#",
+      subItems: [
+        { name: "Preparation of projections", href: "#" },
+        { name: "Preparation of Financial statements", href: "#" },
+        { name: "Book keeping", href: "#" },
+        { name: "Registration of partnership firms", href: "#" },
+        { name: "EPF and EPS registration", href: "#" },
+      ],
+    },
   ];
 
   const toggleSubmenu = (menu) => {
     if (menu === "services") {
-      setActiveSubmenu(activeSubmenu === menu ? "" : menu);
-      setActiveTaxSubmenu(false); // Reset tax submenu when toggling services
-    } else if (menu === "tax-filing") {
+      setActiveSubmenu(activeSubmenu === "services" ? "" : "services");
+      setActiveTaxSubmenu(false); // Reset nested menus
+      setActiveOtherServicesSubmenu(false);
+    } else if (menu === "Tax Filing") {
       setActiveTaxSubmenu(!activeTaxSubmenu);
+    } else if (menu === "Other Services") {
+      setActiveOtherServicesSubmenu(!activeOtherServicesSubmenu);
     }
   };
 
@@ -71,7 +87,7 @@ export default function Navbar() {
           <NavbarItem key={`${item}-${index}`} className="relative group">
             {item === "Services" ? (
               <div className="relative">
-                <Link color="" className="cursor-pointer" href="#">
+                <Link className="cursor-pointer" href="#">
                   {item}
                 </Link>
                 <div className="absolute left-0 hidden group-hover:block w-48 bg-white/90 backdrop-blur-md rounded-lg shadow-lg p-4 z-50">
@@ -88,7 +104,7 @@ export default function Navbar() {
                           {service.name}
                         </Link>
                         {service.subItems && (
-                          <div className="absolute left-[90%] top-0 hidden group-hover/service:block w-40 bg-white/90 backdrop-blur-md rounded-lg shadow-lg p-2 ml-2">
+                          <div className="absolute left-[90%] top-0 hidden group-hover/service:block min-w-40 bg-white/90 backdrop-blur-md rounded-lg shadow-lg p-2 ml-2">
                             {service.subItems.map((subItem) => (
                               <Link
                                 key={subItem.name}
@@ -106,10 +122,7 @@ export default function Navbar() {
                 </div>
               </div>
             ) : (
-              <Link
-                color=""
-                href={index < 2 ? `/#${item.toLowerCase()}` : `/services`}
-              >
+              <Link href={index < 2 ? `/#${item.toLowerCase()}` : `/services`}>
                 {item}
               </Link>
             )}
@@ -123,14 +136,17 @@ export default function Navbar() {
           <div key={`${item}-${index}`}>
             {item === "Services" ? (
               <>
+                {/* Services Main Toggle */}
                 <NavbarMenuItem>
                   <div
-                    className="w-full cursor-pointer "
+                    className="w-full cursor-pointer"
                     onClick={() => toggleSubmenu("services")}
                   >
                     {item}
                   </div>
                 </NavbarMenuItem>
+
+                {/* Services Submenu */}
                 {activeSubmenu === "services" && (
                   <div className="pl-4">
                     {serviceOptions.map((service) => (
@@ -139,7 +155,7 @@ export default function Navbar() {
                           {service.subItems ? (
                             <div
                               className="w-full cursor-pointer py-2"
-                              onClick={() => toggleSubmenu("tax-filing")}
+                              onClick={() => toggleSubmenu(service.name)}
                             >
                               {service.name}
                             </div>
@@ -152,8 +168,10 @@ export default function Navbar() {
                             </Link>
                           )}
                         </NavbarMenuItem>
-                        {service.subItems && activeTaxSubmenu && (
-                          <div className="pl-4">
+
+                        {/* Tax Filing Submenu */}
+                        {service.name === "Tax Filing" && activeTaxSubmenu && (
+                          <div className="pl-4 w-full">
                             {service.subItems.map((subItem) => (
                               <NavbarMenuItem key={subItem.name}>
                                 <Link
@@ -166,6 +184,23 @@ export default function Navbar() {
                             ))}
                           </div>
                         )}
+
+                        {/* Other Services Submenu */}
+                        {service.name === "Other Services" &&
+                          activeOtherServicesSubmenu && (
+                            <div className="pl-4 w-full">
+                              {service.subItems.map((subItem) => (
+                                <NavbarMenuItem key={subItem.name}>
+                                  <Link
+                                    href={subItem.href}
+                                    className="w-full py-2 text-gray-700"
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                </NavbarMenuItem>
+                              ))}
+                            </div>
+                          )}
                       </div>
                     ))}
                   </div>
@@ -174,7 +209,6 @@ export default function Navbar() {
             ) : (
               <NavbarMenuItem>
                 <Link
-                  color=""
                   className="w-full"
                   href={index < 2 ? `/#${item.toLowerCase()}` : `/services`}
                   size="lg"
@@ -194,11 +228,9 @@ export default function Navbar() {
             color="primary"
             href="#"
             variant="flat"
-            className="relative inline-flex lg:h-12 bg-[#8C249D] text-neutral-100 rounded-2xl overflow-hidden p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            className="relative inline-flex lg:h-12 bg-[#8C249D] text-neutral-100 rounded-2xl"
           >
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-4 lg:px-8 lg:py-1 lg:text-sm text-xs font-medium bg-transparent text-neutral-100 backdrop-blur-3xl">
-              Contact Us
-            </span>
+            Contact Us
           </Button>
         </NavbarItem>
       </NavbarContent>

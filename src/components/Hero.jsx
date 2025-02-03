@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <div className=" bg-gradient-to-br from-[#581CA0] to-[#96259C] pt-10 pb-20 rounded-b-[90px] space-y-10">
       <div className="bg-[#8E249C] text-slate-50 text-center py-2">
-        Served more than 100+ Clients{" "}
+        Served more than 1000+ Clients & counting{" "}
       </div>
       <div className="max-w-7xl mx-auto flex lg:flex-row flex-col items-center justify-center text-white">
         <div className="lg:w-1/2 p-4 flex flex-col gap-5">
