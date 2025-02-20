@@ -378,9 +378,7 @@ export default function Navbar() {
           <div key={`${item}-${index}`}>
             {item === "Blog" ? (
               <NavbarMenuItem>
-                <Link href="/blog/all" className="w-full py-2 text-gray-700">
-                  {item}
-                </Link>
+                <Link href="/blog/all">{item}</Link>
               </NavbarMenuItem>
             ) : item === "Services" ? (
               <>
