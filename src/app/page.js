@@ -1,4 +1,5 @@
 "use client";
+import { Client } from "appwrite";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Learn from "@/components/Learn";
@@ -12,6 +13,8 @@ import { motion } from "framer-motion";
 import React from "react";
 
 export default function Home() {
+  const client = new Client();
+  client.setProject("67b1aa5200225c6923cc");
   return (
     <div className="bg-white  relative">
       <Navbar />
