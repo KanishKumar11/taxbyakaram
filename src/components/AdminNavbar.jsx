@@ -45,7 +45,7 @@ const AdminNavbar = () => {
         </Link>
 
         {user ? (
-          <UserNav user={user} />
+          <UserNav user={user} onLogout={handleLogout} />
         ) : (
           <Button as={Link} href="/login" color="primary" variant="flat">
             Login
