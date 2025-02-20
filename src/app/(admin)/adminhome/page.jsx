@@ -25,7 +25,7 @@ export default function AdminBlogList() {
         // Check admin status
         const user = await account.get();
         if (!user || !user.labels?.includes("admin")) {
-          router.push("/login");
+          router.push("/admin-login");
           return;
         }
         setIsAdmin(true);
