@@ -4,11 +4,14 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Query } from "appwrite";
-import JoditEditor from "jodit-react";
 import AdminNavbar from "@/components/AdminNavbar";
 import { slugify } from "@/lib/utils";
 import { account, databases, storage } from "@/lib/appwrite";
 import { debounce } from "lodash";
+import dynamic from "next/dynamic";
+const JoditEditor = dynamic(() => import("jodit-react"), {
+  ssr: false,
+});
 
 const BUCKET_ID = process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID;
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
