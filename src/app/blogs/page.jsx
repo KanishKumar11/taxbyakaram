@@ -75,7 +75,6 @@ export default function BlogList() {
         <p className="text-xl text-center mb-16">
           Learn more about our Tax by reading our blogs.
         </p>
-
         <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto">
           {blogs.map((blog) => (
             <BlogCard
