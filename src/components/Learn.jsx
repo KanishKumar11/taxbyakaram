@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { learnTabs } from "@/lib/data";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { cn } from "@/lib/utils";
 import { Simula } from "@/lib/fonts";
 import Link from "next/link";

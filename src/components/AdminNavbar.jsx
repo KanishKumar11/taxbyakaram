@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Button, Link } from "@nextui-org/react";
+import { Button, Link } from "@heroui/react";
 import UserNav from "./NavAdmin/UserNav";
 import { account } from "@/lib/appwrite"; // Import Appwrite config
 

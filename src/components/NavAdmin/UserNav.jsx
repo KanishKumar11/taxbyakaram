@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { account } from "@/lib/appwrite"; // Import Appwrite config
-import { Avatar } from "@nextui-org/react";
+import { Avatar } from "@heroui/react";
 
 export default function UserNav({ user, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
