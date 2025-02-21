@@ -42,13 +42,13 @@ export default function CreateBlogPost() {
       try {
         const user = await account.get();
         if (!user || !user.labels.includes("admin")) {
-          if (isMounted) router.push("/login");
+          if (isMounted) router.push("/admin-login");
         } else {
           if (isMounted) setIsAdmin(true);
         }
       } catch (error) {
         console.error("Auth error:", error);
-        router.push("/login");
+        router.push("/admin-login");
       }
     };
 
