@@ -18,8 +18,9 @@ export default function BlogList() {
     const fetchData = async () => {
       try {
         // Check user role
-        const user = await account.get();
-        setIsAdmin(user.labels?.includes("admin") || false);
+        // const user = await account.get();
+        // console.log(user);
+        // setIsAdmin(user.labels?.includes("admin") || false);
 
         // Fetch blogs
         const response = await databases.listDocuments(
@@ -29,6 +30,7 @@ export default function BlogList() {
         );
         setBlogs(response.documents);
       } catch (error) {
+        console.log(error);
         setError(error.message);
       } finally {
         setLoading(false);

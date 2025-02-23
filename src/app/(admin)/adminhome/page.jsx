@@ -40,7 +40,7 @@ export default function AdminBlogList() {
       } catch (error) {
         setError(error.message);
         if (error.code === 401) {
-          router.push("/login");
+          router.push("/admin-login");
         }
       } finally {
         setLoading(false);
