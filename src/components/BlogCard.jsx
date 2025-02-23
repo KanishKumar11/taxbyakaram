@@ -16,7 +16,7 @@ export default function BlogCard({
   };
   return (
     <div
-      className="rounded-lg cursor-pointer bg-white overflow-hidden group border border-gray-300 shadow-lg min-h-full min-w-[300px] w-full relative"
+      className="rounded-lg cursor-pointer bg-white overflow-hidden group border border-gray-300 shadow-lg min-h-full min-w-[280px] w-full relative"
       onClick={handleRedirect}
     >
       {image && (

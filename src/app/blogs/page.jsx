@@ -70,7 +70,7 @@ export default function BlogList() {
   return (
     <>
       <Navbar />
-      <div className="mx-[70px]">
+      <div className="lg:mpx-[70px] px-4">
         <div className="text-[44px] text-center mt-[60px] font-bold">
           All Blogs
         </div>
